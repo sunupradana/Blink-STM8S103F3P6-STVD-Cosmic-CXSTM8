@@ -14,13 +14,13 @@ void myDelay()
 
 main()   
 {            
-     GPIOB->DDR |= 0x20;  // PD.0 as Output
-     GPIOB->CR1 |= 0x20;  // PD.0 as Push Pull Type Output
+     GPIOB->DDR |= 0x20;  // PB.5 sebagai output; 0x20 = 0010 0000
+     GPIOB->CR1 |= 0x20;  // PB.5 Push Pull Type Output
      while (1)
      {
-            GPIOB->ODR |=1<<5;  // PD.o = 1             
+            GPIOB->ODR |=1<<5;  // PB.5 = 1             
             myDelay();                          
-            GPIOB->ODR &= ~(1<<5); // PD.0 = 0
+            GPIOB->ODR &= ~(1<<5); // PB.5 = 0
             myDelay();
      }
 }
